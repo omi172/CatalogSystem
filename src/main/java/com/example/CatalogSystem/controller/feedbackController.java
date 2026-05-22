@@ -25,7 +25,7 @@ public class feedbackController {
     @PostMapping("/feedback")
     public String submitForm(@ModelAttribute("Feedback") FeedbackDto feedback, Model model) {
         feedbackService.saveFeedBack(feedback);
-        // This string binds directly to the th:text="${message}" placeholder above
+        th:text="${message}" placeholder above
         model.addAttribute("message", "Thank you, " + feedback.getName() + "! Your review for '" + feedback.getBookName() + "' has been saved.");
         return "feedback-success";
     }
